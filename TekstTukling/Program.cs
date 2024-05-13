@@ -20,7 +20,9 @@ namespace TekstTukling
             if (userInput == "1")
             {
                 Console.Clear();
-                Console.WriteLine($"{rotateText()} er teksten ditt rotert!");
+                Console.WriteLine("Korleis tekst vil du rotere?");
+                string userInput2 = Console.ReadLine();
+                Console.WriteLine($"{rotateText(userInput2)} er teksten ditt rotert!");
             } else if (userInput == "2")
             {
                 Console.Clear();
@@ -28,16 +30,14 @@ namespace TekstTukling
             }
         }
 
-        static string rotateText()
+        static string rotateText(string tekst)
         {
-            Console.WriteLine("Korleis tekst vil du rotere?");
-            string userInput = Console.ReadLine();
+            
             string rotatedWord = "";
             
-            for (int i = userInput.Length; i > 0; i--)
+            for (int i = tekst.Length; i > 0; i--)
             {
-                
-                rotatedWord += userInput[i - 1];
+                rotatedWord += tekst[i - 1];
                 
             }
 
